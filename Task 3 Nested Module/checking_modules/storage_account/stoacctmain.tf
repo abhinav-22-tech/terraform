@@ -5,3 +5,8 @@ resource "azurerm_storage_account""storageacct" {
   account_replication_type = "${var.account_replication}"
   account_tier = "${var.account_tier}"
 }
+
+provider "azurerm" {
+  features {
+  }
+}

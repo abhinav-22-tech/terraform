@@ -1,5 +1,5 @@
 variable "resource_group" {
- default = "user-nuqo"
+ default = "user-ozjiaqdbrgod"
   } 
  variable "location"  { 
  default = "East US"

@@ -1,5 +1,5 @@
 variable "rg" {
-  default = "user-wmle"
+  default = "user-ozjiaqdbrgod"
 }
 variable "loc" {
   default = "eastus"
@@ -11,5 +11,5 @@ variable "account_replication" {
   default = "LRS"
 }
 variable "account_tier" {
-  default = "Basic"
+  default = "Standard"
 }

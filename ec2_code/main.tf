@@ -4,9 +4,9 @@ resource "aws_instance" "ec2" {
     # count = "${var.count}"
     associate_public_ip_address = "${var.ip_address}"
 
-    root_block_device {
-     volume_size = "${var.volume_size}"   
-    }
+    # root_block_device {
+    #  volume_size = "${var.volume_size}"   
+    # }
 
     tags = {
         Name = "${var.name}-${var.environment}-${var.project}"  # name-project-environment
@@ -19,13 +19,15 @@ resource "aws_instance" "ec2" {
 }
 
 resource "aws_ebs_volume" "new_volume" {
-  availability_zone = "${var.region}"
+  availability_zone = "${var.region}a"
   size = 30
 
   tags = {
     Name = "${var.name}-${var.environment}-${var.project}"  # name-project-environment
   }
-  depends_on = [aws_instance.ec2]
+  depends_on = [
+    aws_instance.ec2
+  ]
 }
 
 resource "aws_volume_attachment" "new_attach" {
